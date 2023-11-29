@@ -1,0 +1,6 @@
+psycopg2_binary
+pandas
+cohere
+openai
+tqdm
+boto3
