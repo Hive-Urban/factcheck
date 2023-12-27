@@ -36,11 +36,11 @@ def get_top_n(embedding, n=5):
 def get_related_openai(text, candidates):
     
     # Your OpenAI API key
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key='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')
 
     candidate_text = "\n\n".join([f"{i}: {x}" for i, x in enumerate(candidates)])
     prompt = f"The following is a news item or factual claim in Hebrew: {text}\n\n The following numbered texts were retrieved via semantic search as related to the text: {candidate_text}.\n\nYou are to classify for each retrieved text whether it factually supports or negates the first text. Classify it as factually supporting if the retrieved text reports the same facts or significantly supports the first text. Return a JSON file with fields 'support', and 'negate', where each should contain a list of text id numbers. Retrieved texts that neither support or negate the text, or are likely unrelated, should be omitted. Do not include anything else in your response."
-    
+    print(prompt)
     messages=[
         {
             "role": "user",
